@@ -1,0 +1,14 @@
+const buttons = document.querySelectorAll('[data-role]');
+
+const messages = {
+  parent: 'Parent dashboard opened successfully.',
+  student: 'Student dashboard opened successfully.',
+  teacher: 'Teacher dashboard opened successfully.'
+};
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const role = btn.dataset.role;
+    document.getElementById('toast-' + role).textContent = messages[role];
+  });
+});
