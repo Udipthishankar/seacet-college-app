@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning | SEA Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      min-height:100vh;
+      background:linear-gradient(135deg,#eef6ff,#fff7fb);
+      color:#111827;
+    }
+    .wrap{
+      width:min(1100px,92%);
+      margin:auto;
+      padding:28px 0 44px;
+    }
+    .topbar{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:20px 22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+      margin-bottom:18px;
+    }
+    .topbar h1{
+      margin:0;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+    }
+    .topbar p{
+      margin:8px 0 0;
+      color:#6b7280;
+      line-height:1.6;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid #eef2f7;
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 10px 24px rgba(0,0,0,.05);
+    }
+    .icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      margin-bottom:12px;
+      color:#fff;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      font-size:1.2rem;
+    }
+    .card h3{
+      margin:0 0 8px;
+    }
+    .card p{
+      margin:0;
+      color:#6b7280;
+      line-height:1.6;
+    }
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    }
+    .tools{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .field label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+      color:#374151;
+    }
+    .field input,.field select, .field textarea{
+      width:100%;
+      padding:13px 14px;
+      border-radius:14px;
+      border:1px solid #d1d5db;
+      background:#fff;
+      outline:none;
+      font-family:inherit;
+    }
+    .field textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border:none;
+      border-radius:999px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+    }
+    .btn.primary{background:linear-gradient(135deg,#2563eb,#7c3aed)}
+    .btn.secondary{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+    .btn.accent{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+    .table-wrap{
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid #eef2f7;
+      margin-top:18px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:860px;
+      background:#fff;
+    }
+    th,td{
+      padding:14px 16px;
+      text-align:left;
+      border-bottom:1px solid #eef2f7;
+    }
+    th{
+      background:#f8fafc;
+      color:#374151;
+    }
+    tr:hover td{
+      background:#fcfdff;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.85rem;
+      font-weight:700;
+    }
+    .uploaded{background:#dcfce7;color:#15803d}
+    .review{background:#fef3c7;color:#b45309}
+    .draft{background:#e0e7ff;color:#4338ca}
+    .actions-bottom{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .linkbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 24px rgba(37,99,235,.22);
+    }
+    .linkbtn.secondary{
+      background:linear-gradient(135deg,#0f766e,#14b8a6);
+      box-shadow:0 10px 24px rgba(15,118,110,.22);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>Learning</h1>
+      <p>Upload notes, manage assignments, and share study resources.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon"><i class="fa-solid fa-note-sticky"></i></div>
+        <h3>Notes</h3>
+        <p>Add chapter notes, PDF files, and revision material.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="fa-solid fa-clipboard-list"></i></div>
+        <h3>Assignments</h3>
+        <p>Create homework tasks and track submission status.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="fa-solid fa-folder-open"></i></div>
+        <h3>Resources</h3>
+        <p>Share links, videos, worksheets, and extra learning items.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="tools">
+        <div class="field">
+          <label>Subject</label>
+          <select>
+            <option>Mathematics</option>
+            <option>Science</option>
+            <option>English</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Topic</label>
+          <input type="text" placeholder="Enter topic name">
+        </div>
+        <div class="field">
+          <label>Type</label>
+          <select>
+            <option>Notes</option>
+            <option>Assignment</option>
+            <option>Resource</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Description</label>
+        <textarea placeholder="Write details for students here..."></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary"><i class="fa-solid fa-upload"></i> Upload</button>
+        <button class="btn secondary"><i class="fa-solid fa-file-pen"></i> Save Draft</button>
+        <button class="btn accent"><i class="fa-solid fa-paper-plane"></i> Publish</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Item</th>
+              <th>Subject</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Chapter 1 Notes</td>
+              <td>Math</td>
+              <td>Notes</td>
+              <td>19 Jul 2026</td>
+              <td><span class="status uploaded"><i class="fa-solid fa-circle"></i> Uploaded</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Homework 2</td>
+              <td>Science</td>
+              <td>Assignment</td>
+              <td>19 Jul 2026</td>
+              <td><span class="status review"><i class="fa-solid fa-circle"></i> Review</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Video Link</td>
+              <td>English</td>
+              <td>Resource</td>
+              <td>19 Jul 2026</td>
+              <td><span class="status draft"><i class="fa-solid fa-circle"></i> Draft</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="actions-bottom">
+        <a class="linkbtn" href="teacher-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+        <a class="linkbtn secondary" href="class-list.html"><i class="fa-solid fa-chalkboard"></i> Go to Classes</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
