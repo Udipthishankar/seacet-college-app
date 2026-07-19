@@ -1050,3 +1050,25 @@ body {
   box-shadow: var(--shadow);
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+.card{
+  display:block;
+  padding:22px;
+  border-radius:20px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  box-shadow:0 12px 34px rgba(0,0,0,.07);
+  text-decoration:none;
+  color:#111827;
+}
+.card h3{
+  margin:0 0 8px;
+}
+.card p{
+  margin:0;
+  color:#6b7280;
+}
