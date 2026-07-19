@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class List | SEA Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      min-height:100vh;
+      background:linear-gradient(135deg,#eef6ff,#fff7fb);
+      color:#111827;
+    }
+    .wrap{
+      width:min(1100px,92%);
+      margin:auto;
+      padding:28px 0 44px;
+    }
+    .topbar{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:20px 22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+      margin-bottom:18px;
+    }
+    .topbar h1{
+      margin:0;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+    }
+    .topbar p{
+      margin:8px 0 0;
+      color:#6b7280;
+      line-height:1.6;
+    }
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    }
+    .filters{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .field label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+      color:#374151;
+    }
+    .field select,.field input{
+      width:100%;
+      padding:13px 14px;
+      border-radius:14px;
+      border:1px solid #d1d5db;
+      background:#fff;
+      outline:none;
+      font-family:inherit;
+    }
+    .table-wrap{
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid #eef2f7;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:720px;
+      background:#fff;
+    }
+    th,td{
+      padding:14px 16px;
+      text-align:left;
+      border-bottom:1px solid #eef2f7;
+    }
+    th{
+      background:#f8fafc;
+      font-size:.92rem;
+      color:#374151;
+    }
+    tr:hover td{
+      background:#fcfdff;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.85rem;
+      font-weight:700;
+    }
+    .badge.primary{background:#e0e7ff;color:#4338ca}
+    .badge.success{background:#dcfce7;color:#15803d}
+    .badge.warn{background:#fef3c7;color:#b45309}
+    .actions{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 24px rgba(37,99,235,.22);
+    }
+    .btn.secondary{
+      background:linear-gradient(135deg,#0f766e,#14b8a6);
+      box-shadow:0 10px 24px rgba(15,118,110,.22);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>Class List</h1>
+      <p>View class sections, subject details, and current teacher assignments.</p>
+    </div>
+
+    <div class="panel">
+      <div class="filters">
+        <div class="field">
+          <label>School Year</label>
+          <select>
+            <option>2025 - 2026</option>
+            <option>2026 - 2027</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Class Name</label>
+          <select>
+            <option>Class 8 A</option>
+            <option>Class 8 B</option>
+            <option>Class 9 A</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Subject</label>
+          <select>
+            <option>Mathematics</option>
+            <option>Science</option>
+            <option>English</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Search</label>
+          <input type="text" placeholder="Search class or student">
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Class Name</th>
+              <th>Section</th>
+              <th>Subject</th>
+              <th>Teacher</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Class 8</td>
+              <td>A</td>
+              <td>Mathematics</td>
+              <td>Mr. Khan</td>
+              <td><span class="badge success"><i class="fa-solid fa-circle"></i> Active</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Class 8</td>
+              <td>B</td>
+              <td>Science</td>
+              <td>Mrs. Roy</td>
+              <td><span class="badge primary"><i class="fa-solid fa-circle"></i> Ongoing</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Class 9</td>
+              <td>A</td>
+              <td>English</td>
+              <td>Ms. Ali</td>
+              <td><span class="badge warn"><i class="fa-solid fa-circle"></i> Review</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="teacher-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+        <a class="btn secondary" href="attendance.html"><i class="fa-solid fa-clipboard-check"></i> Go to Attendance</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
