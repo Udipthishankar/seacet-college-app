@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance | SEA Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      min-height:100vh;
+      background:linear-gradient(135deg,#eef6ff,#fff7fb);
+      color:#111827;
+    }
+    .wrap{
+      width:min(1100px,92%);
+      margin:auto;
+      padding:28px 0 44px;
+    }
+    .topbar{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:20px 22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+      margin-bottom:18px;
+    }
+    .topbar h1{
+      margin:0;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+    }
+    .topbar p{
+      margin:8px 0 0;
+      color:#6b7280;
+      line-height:1.6;
+    }
+    .summary{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .stat{
+      background:#fff;
+      border:1px solid #eef2f7;
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.05);
+    }
+    .stat span{
+      display:block;
+      color:#6b7280;
+      font-size:.9rem;
+      margin-bottom:8px;
+    }
+    .stat strong{
+      font-size:1.7rem;
+    }
+    .stat.present strong{color:#15803d}
+    .stat.absent strong{color:#dc2626}
+    .stat.total strong{color:#2563eb}
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    }
+    .tools{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .field label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+      color:#374151;
+    }
+    .field input,.field select{
+      width:100%;
+      padding:13px 14px;
+      border-radius:14px;
+      border:1px solid #d1d5db;
+      background:#fff;
+      outline:none;
+      font-family:inherit;
+    }
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border:none;
+      border-radius:999px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+    }
+    .btn.present{background:linear-gradient(135deg,#16a34a,#22c55e)}
+    .btn.absent{background:linear-gradient(135deg,#dc2626,#ef4444)}
+    .btn.clear{background:linear-gradient(135deg,#2563eb,#7c3aed)}
+    .table-wrap{
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid #eef2f7;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:860px;
+      background:#fff;
+    }
+    th,td{
+      padding:14px 16px;
+      text-align:left;
+      border-bottom:1px solid #eef2f7;
+    }
+    th{
+      background:#f8fafc;
+      color:#374151;
+    }
+    tr:hover td{
+      background:#fcfdff;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.85rem;
+      font-weight:700;
+    }
+    .p{background:#dcfce7;color:#15803d}
+    .a{background:#fee2e2;color:#dc2626}
+    .actions-bottom{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .linkbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 24px rgba(37,99,235,.22);
+    }
+    .linkbtn.secondary{
+      background:linear-gradient(135deg,#0f766e,#14b8a6);
+      box-shadow:0 10px 24px rgba(15,118,110,.22);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>Attendance</h1>
+      <p>Mark students present or absent and keep a day-wise record.</p>
+    </div>
+
+    <div class="summary">
+      <div class="stat total"><span>Total Students</span><strong>32</strong></div>
+      <div class="stat present"><span>Present Today</span><strong>28</strong></div>
+      <div class="stat absent"><span>Absent Today</span><strong>4</strong></div>
+    </div>
+
+    <div class="panel">
+      <div class="tools">
+        <div class="field">
+          <label>Class</label>
+          <select>
+            <option>Class 8 A</option>
+            <option>Class 8 B</option>
+            <option>Class 9 A</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Date</label>
+          <input type="date">
+        </div>
+        <div class="field">
+          <label>Search Student</label>
+          <input type="text" placeholder="Enter student name">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn present"><i class="fa-solid fa-check"></i> Mark Present</button>
+        <button class="btn absent"><i class="fa-solid fa-xmark"></i> Mark Absent</button>
+        <button class="btn clear"><i class="fa-solid fa-eraser"></i> Clear</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Student Name</th>
+              <th>Roll No</th>
+              <th>Section</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Aarav Sharma</td>
+              <td>21</td>
+              <td>A</td>
+              <td><span class="status p"><i class="fa-solid fa-circle"></i> Present</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Anaya Verma</td>
+              <td>22</td>
+              <td>A</td>
+              <td><span class="status a"><i class="fa-solid fa-circle"></i> Absent</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Rahul Mehta</td>
+              <td>23</td>
+              <td>A</td>
+              <td><span class="status p"><i class="fa-solid fa-circle"></i> Present</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="actions-bottom">
+        <a class="linkbtn" href="teacher-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+        <a class="linkbtn secondary" href="learning.html"><i class="fa-solid fa-book-open"></i> Go to Learning</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
