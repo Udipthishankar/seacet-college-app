@@ -984,3 +984,23 @@ a{
       color:#fff;
       background:linear-gradient(135deg,var(--a1),var(--a2));
     }
+.page-header{
+  width:min(1100px,92%);
+  margin:20px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(124,58,237,.10);
+  border-radius:18px;
+  padding:14px 18px;
+}
+
+.back-btn{
+  padding:10px 16px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#7c3aed,#06b6d4);
+  color:#fff;
+  font-weight:600;
+}
