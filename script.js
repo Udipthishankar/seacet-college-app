@@ -39,21 +39,23 @@ window.addEventListener("resize", () => {
     closeMenu();
   }
 });
-const forms = document.querySelectorAll(".role-card form");
+document.addEventListener("DOMContentLoaded", () => {
+  const forms = document.querySelectorAll(".role-card form");
 
-forms.forEach((form) => {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  forms.forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    const inputs = form.querySelectorAll("input");
-    const filled = [...inputs].every(input => input.value.trim() !== "");
+      const inputs = form.querySelectorAll("input");
+      const empty = [...inputs].some((input) => input.value.trim() === "");
 
-    if (!filled) {
-      alert("Please fill in both fields.");
-      return;
-    }
+      if (empty) {
+        alert("Please fill in both fields.");
+        return;
+      }
 
-    alert("Login submitted successfully.");
-    form.reset();
+      alert("Login submitted successfully.");
+      form.reset();
+    });
   });
 });
