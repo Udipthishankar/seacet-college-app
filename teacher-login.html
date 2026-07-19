@@ -1,149 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teacher Login | SEA Portal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *{
-      box-sizing:border-box;
-    }
+<div class="cards">
+  <a class="card" href="classes.html">
+    <h3>Manage Classes</h3>
+    <p>View class list, schedule, and sections.</p>
+  </a>
 
-    body{
-      margin:0;
-      font-family:Poppins,sans-serif;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,#eef6ff,#fff4f8);
-      padding:20px;
-    }
+  <a class="card" href="attendance.html">
+    <h3>Attendance</h3>
+    <p>Mark present and absent students.</p>
+  </a>
 
-    .login-box{
-      width:min(440px,100%);
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(0,0,0,.06);
-      border-radius:26px;
-      box-shadow:0 20px 60px rgba(0,0,0,.12);
-      padding:34px 28px;
-    }
-
-    .logo{
-      width:64px;
-      height:64px;
-      border-radius:18px;
-      margin:0 auto 14px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg,#0f766e,#2563eb);
-      color:#fff;
-      font-size:1.6rem;
-      font-weight:800;
-    }
-
-    h1{
-      margin:0;
-      text-align:center;
-      font-size:2rem;
-      color:#111827;
-    }
-
-    p{
-      margin:8px 0 26px;
-      text-align:center;
-      color:#6b7280;
-      font-size:.96rem;
-    }
-
-    .field{
-      margin-bottom:16px;
-    }
-
-    label{
-      display:block;
-      margin-bottom:8px;
-      font-size:.95rem;
-      font-weight:600;
-      color:#374151;
-    }
-
-    input{
-      width:100%;
-      padding:14px 16px;
-      border-radius:14px;
-      border:1px solid #d1d5db;
-      outline:none;
-      font-size:1rem;
-      background:#fff;
-    }
-
-    input:focus{
-      border-color:#0f766e;
-      box-shadow:0 0 0 4px rgba(15,118,110,.12);
-    }
-
-    .actions{
-      margin-top:22px;
-    }
-
-    button{
-      width:100%;
-      border:none;
-      border-radius:14px;
-      padding:14px 16px;
-      font-size:1rem;
-      font-weight:700;
-      color:#fff;
-      background:linear-gradient(135deg,#0f766e,#2563eb);
-      cursor:pointer;
-    }
-
-    button:hover{
-      opacity:.95;
-    }
-
-    .links{
-      margin-top:16px;
-      text-align:center;
-      font-size:.92rem;
-    }
-
-    .links a{
-      color:#0f766e;
-      text-decoration:none;
-      font-weight:600;
-    }
-  </style>
-</head>
-<body>
-  <div class="login-box">
-    <div class="logo">T</div>
-    <h1>Teacher Login</h1>
-    <p>Sign in to access the teacher portal</p>
-
-    <form action="./teacher-dashboard.html" method="get">
-      <div class="field">
-        <label for="username">Teacher ID / Username</label>
-        <input type="text" id="username" name="username" required>
-      </div>
-
-      <div class="field">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-
-      <div class="actions">
-        <button type="submit">Login</button>
-      </div>
-    </form>
-
-    <div class="links">
-      <a href="#">Forgot password?</a>
-    </div>
-  </div>
-</body>
-</html>
+  <a class="card" href="learning.html">
+    <h3>Learning</h3>
+    <p>Share notes, homework, and resources.</p>
+  </a>
+</div>
