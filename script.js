@@ -86,3 +86,14 @@ document.getElementById("linkForm").addEventListener("submit", function (e) {
   e.preventDefault();
   window.location.href = "attendance.html";
 });
+<form id="linkForm">
+  ...
+  <button type="submit">Link Child</button>
+</form>
+
+<script>
+  document.getElementById("linkForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    window.location.href = "attendance.html";
+  });
+</script>
