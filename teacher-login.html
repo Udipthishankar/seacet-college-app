@@ -103,9 +103,9 @@
   <div class="login-box">
     <div class="logo"><i class="fa-solid fa-chalkboard-user"></i></div>
     <h1>Teacher Login</h1>
-    <p>Sign in to manage classes, attendance, and learning</p>
+    <p>Sign in to manage classes and attendance</p>
 
-    <form action="./teacher-dashboard.html" method="get">
+    <form action="teacher-dashboard.html" method="get">
       <div class="field">
         <label for="username">Teacher ID / Username</label>
         <input type="text" id="username" name="username" required>
@@ -117,32 +117,11 @@
       </div>
 
       <div class="actions">
-        <button type="button" onclick="window.location.href='teacher-dashboard.html'">Login</button>
+        <button type="submit">Login</button>
       </div>
     </form>
-    <div class="section">
-  <h2><i class="fa-solid fa-chalkboard"></i> Manage Classes</h2>
-  <div class="btn-group">
-    <a href="class-list.html" class="dash-btn"><i class="fa-solid fa-list"></i> View Class List</a>
-    <a href="attendance-student.html" class="dash-btn secondary"><i class="fa-solid fa-clipboard-check"></i> Attendance</a>
+
+    <div class="small">After login, go to the teacher dashboard.</div>
   </div>
-    </div>
-
-    <div class="small">After login, teacher can manage classes, attendance, and learning pages.</div>
-  </div>
-  <script>
-  document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
-
-    if (user === "teacher" && pass === "1234") {
-      window.location.href = "teacher-dashboard.html";
-    } else {
-      alert("Invalid username or password");
-    }
-  });
-  </script>
 </body>
 </html>
