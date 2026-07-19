@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | SEA Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      background:linear-gradient(180deg,#eef6ff,#fff7fb);
+      color:#111827;
+    }
+    .wrap{
+      width:min(1150px,92%);
+      margin:auto;
+      padding:24px 0 40px;
+    }
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .welcome h1{
+      margin:0;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+    }
+    .welcome p{
+      margin:6px 0 0;
+      color:#6b7280;
+    }
+    .profile{
+      padding:12px 18px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
+      font-weight:600;
+      color:#4338ca;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin-bottom:22px;
+    }
+    .card{
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    }
+    .card .label{
+      color:#6b7280;
+      font-size:.92rem;
+      margin-bottom:8px;
+    }
+    .card .value{
+      font-size:2rem;
+      font-weight:800;
+      margin:0;
+      color:#1d4ed8;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1.4fr .9fr;
+      gap:18px;
+    }
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    }
+    .panel h2{
+      margin:0 0 14px;
+      font-size:1.2rem;
+    }
+    .item{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 0;
+      border-bottom:1px solid #eef2f7;
+    }
+    .item:last-child{border-bottom:none}
+    .item strong{display:block;margin-bottom:4px}
+    .badge{
+      padding:8px 12px;
+      border-radius:999px;
+      background:#e0e7ff;
+      color:#4338ca;
+      font-size:.85rem;
+      white-space:nowrap;
+      height:fit-content;
+    }
+    .links{
+      display:grid;
+      gap:12px;
+    }
+    .link{
+      padding:14px 16px;
+      border-radius:16px;
+      background:#f8fafc;
+      border:1px solid #e5e7eb;
+      color:#111827;
+      text-decoration:none;
+      font-weight:600;
+    }
+    @media (max-width: 800px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="welcome">
+        <h1>Welcome back, Student</h1>
+        <p>Here is your learning dashboard for today.</p>
+      </div>
+      <div class="profile">Student ID: 1024</div>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <div class="label">Attendance</div>
+        <p class="value">92%</p>
+      </div>
+      <div class="card">
+        <div class="label">Pending Tasks</div>
+        <p class="value">03</p>
+      </div>
+      <div class="card">
+        <div class="label">Messages</div>
+        <p class="value">07</p>
+      </div>
+      <div class="card">
+        <div class="label">Overall Grade</div>
+        <p class="value">A-</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Recent Updates</h2>
+        <div class="item">
+          <div>
+            <strong>Math Assignment</strong>
+            <span>Submit by Friday</span>
+          </div>
+          <span class="badge">Due soon</span>
+        </div>
+        <div class="item">
+          <div>
+            <strong>Science Quiz</strong>
+            <span>Results uploaded</span>
+          </div>
+          <span class="badge">New</span>
+        </div>
+        <div class="item">
+          <div>
+            <strong>Parent Query</strong>
+            <span>Reply received</span>
+          </div>
+          <span class="badge">Done</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Quick Links</h2>
+        <div class="links">
+          <a class="link" href="#">View Attendance</a>
+          <a class="link" href="#">Check Marks</a>
+          <a class="link" href="#">Ask a Query</a>
+          <a class="link" href="#">Download Timetable</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
