@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule | SEA Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      min-height:100vh;
+      background:linear-gradient(135deg,#eef6ff,#fff7fb);
+      color:#111827;
+    }
+    .wrap{
+      width:min(1100px,92%);
+      margin:auto;
+      padding:28px 0 44px;
+    }
+    .topbar{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:20px 22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+      margin-bottom:18px;
+    }
+    .topbar h1{
+      margin:0;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+    }
+    .topbar p{
+      margin:8px 0 0;
+      color:#6b7280;
+      line-height:1.6;
+    }
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    }
+    .info-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      background:#eff6ff;
+      color:#1d4ed8;
+      font-weight:700;
+      font-size:.9rem;
+    }
+    .table-wrap{
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid #eef2f7;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:860px;
+      background:#fff;
+    }
+    th,td{
+      padding:14px 16px;
+      text-align:center;
+      border-bottom:1px solid #eef2f7;
+      border-right:1px solid #eef2f7;
+    }
+    th:last-child,td:last-child{border-right:none}
+    th{
+      background:#f8fafc;
+      color:#374151;
+    }
+    tbody tr:hover td{
+      background:#fcfdff;
+    }
+    .subject{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      color:#fff;
+      font-size:.85rem;
+    }
+    .math{background:#2563eb}
+    .science{background:#0f766e}
+    .english{background:#7c3aed}
+    .history{background:#f59e0b}
+    .break{background:#ef4444}
+    .actions{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 24px rgba(37,99,235,.22);
+    }
+    .btn.secondary{
+      background:linear-gradient(135deg,#0f766e,#14b8a6);
+      box-shadow:0 10px 24px rgba(15,118,110,.22);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>Class Schedule</h1>
+      <p>Weekly timetable for class management and lesson planning.</p>
+    </div>
+
+    <div class="panel">
+      <div class="info-row">
+        <div class="chip"><i class="fa-solid fa-calendar-week"></i> Weekly View</div>
+        <div class="chip"><i class="fa-solid fa-clock"></i> 8 Periods</div>
+        <div class="chip"><i class="fa-solid fa-bell"></i> 2 Breaks</div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Period 1</th>
+              <th>Period 2</th>
+              <th>Period 3</th>
+              <th>Break</th>
+              <th>Period 4</th>
+              <th>Period 5</th>
+              <th>Lunch</th>
+              <th>Period 6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td><span class="subject math">Math</span></td>
+              <td><span class="subject science">Science</span></td>
+              <td><span class="subject english">English</span></td>
+              <td><span class="subject break">Break</span></td>
+              <td><span class="subject math">Math</span></td>
+              <td><span class="subject history">History</span></td>
+              <td><span class="subject break">Lunch</span></td>
+              <td><span class="subject science">Lab</span></td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td><span class="subject science">Science</span></td>
+              <td><span class="subject math">Math</span></td>
+              <td><span class="subject english">English</span></td>
+              <td><span class="subject break">Break</span></td>
+              <td><span class="subject history">History</span></td>
+              <td><span class="subject science">Lab</span></td>
+              <td><span class="subject break">Lunch</span></td>
+              <td><span class="subject english">Reading</span></td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td><span class="subject english">English</span></td>
+              <td><span class="subject history">History</span></td>
+              <td><span class="subject math">Math</span></td>
+              <td><span class="subject break">Break</span></td>
+              <td><span class="subject science">Science</span></td>
+              <td><span class="subject math">Math</span></td>
+              <td><span class="subject break">Lunch</span></td>
+              <td><span class="subject history">Project</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="teacher-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+        <a class="btn secondary" href="sections.html"><i class="fa-solid fa-layer-group"></i> Go to Sections</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
