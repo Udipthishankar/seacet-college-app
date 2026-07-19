@@ -122,7 +122,20 @@
     </form>
 
     <div class="small">After login, teacher can manage classes, attendance, and learning pages.</div>
-    <form action="./teacher-dashboard.html" method="get">
   </div>
+  <script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === "teacher" && pass === "1234") {
+      window.location.href = "teacher-dashboard.html";
+    } else {
+      alert("Invalid username or password");
+    }
+  });
+  </script>
 </body>
 </html>
