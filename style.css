@@ -909,3 +909,40 @@ a{
     grid-template-columns:1fr;
   }
 }
+.query-page{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left, #ffe8f4 0%, transparent 35%),
+    radial-gradient(circle at top right, #dff8ff 0%, transparent 28%),
+    linear-gradient(180deg, #fff7fb, #eef7ff);
+}
+
+.query-main{
+  padding:38px 0 60px;
+}
+
+.query-card{
+  max-width:700px;
+  margin:0 auto;
+  background:rgba(255,255,255,0.84);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+
+.query-form{
+  display:grid;
+  gap:14px;
+}
+
+.query-form textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.08);
+  background:#fff;
+  outline:none;
+  font-family:inherit;
+  resize:vertical;
+}
