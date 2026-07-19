@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Query | SEA Parent Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="query-page">
+  <header class="dash-topbar">
+    <div class="container dash-nav">
+      <div class="brand">
+        <div class="logo">SEA</div>
+        <div>
+          <h1>Teacher Query</h1>
+          <p>Parent Portal</p>
+        </div>
+      </div>
+      <a href="parent-dashboard.html" class="btn secondary">Back to Dashboard</a>
+    </div>
+  </header>
+
+  <main class="container query-main">
+    <section class="dash-hero">
+      <span class="pill">Send a message</span>
+      <h2>Ask a question to teachers</h2>
+      <p>
+        Use this form to send your query, concern, or request to the teacher.
+      </p>
+    </section>
+
+    <section class="query-card">
+      <form action="#" method="post" class="query-form">
+        <div class="field">
+          <label for="parentName">Parent Name</label>
+          <input type="text" id="parentName" placeholder="Enter your name" required>
+        </div>
+
+        <div class="field">
+          <label for="childName">Child Name</label>
+          <input type="text" id="childName" placeholder="Enter child name" required>
+        </div>
+
+        <div class="field">
+          <label for="teacherName">Teacher Name</label>
+          <input type="text" id="teacherName" placeholder="Enter teacher name" required>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Message subject" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Query</label>
+          <textarea id="message" rows="6" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn primary">Send Query</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
