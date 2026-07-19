@@ -82,3 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.getElementById("linkForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  window.location.href = "attendance.html";
+});
