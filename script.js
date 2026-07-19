@@ -59,3 +59,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const parentBtn = document.getElementById("parentLoginBtn");
+  const studentBtn = document.getElementById("studentLoginBtn");
+  const teacherBtn = document.getElementById("teacherLoginBtn");
+
+  if (parentBtn) {
+    parentBtn.addEventListener("click", () => {
+      window.location.href = "parent-dashboard.html";
+    });
+  }
+
+  if (studentBtn) {
+    studentBtn.addEventListener("click", () => {
+      alert("Student dashboard coming soon.");
+    });
+  }
+
+  if (teacherBtn) {
+    teacherBtn.addEventListener("click", () => {
+      alert("Teacher dashboard coming soon.");
+    });
+  }
+});
