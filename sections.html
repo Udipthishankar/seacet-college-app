@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sections | SEA Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      min-height:100vh;
+      background:linear-gradient(135deg,#eef6ff,#fff7fb);
+      color:#111827;
+    }
+    .wrap{
+      width:min(1100px,92%);
+      margin:auto;
+      padding:28px 0 44px;
+    }
+    .topbar{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:20px 22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+      margin-bottom:18px;
+    }
+    .topbar h1{
+      margin:0;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+    }
+    .topbar p{
+      margin:8px 0 0;
+      color:#6b7280;
+      line-height:1.6;
+    }
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid #eef2f7;
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.05);
+    }
+    .card .icon{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      margin-bottom:12px;
+      color:#fff;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      font-size:1.2rem;
+    }
+    .card h3{
+      margin:0 0 8px;
+    }
+    .card p{
+      margin:0;
+      color:#6b7280;
+      line-height:1.6;
+    }
+    .table-wrap{
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid #eef2f7;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:760px;
+      background:#fff;
+    }
+    th,td{
+      padding:14px 16px;
+      text-align:left;
+      border-bottom:1px solid #eef2f7;
+    }
+    th{
+      background:#f8fafc;
+      color:#374151;
+    }
+    tr:hover td{
+      background:#fcfdff;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.85rem;
+      font-weight:700;
+    }
+    .active{background:#dcfce7;color:#15803d}
+    .pending{background:#fef3c7;color:#b45309}
+    .closed{background:#e0e7ff;color:#4338ca}
+    .actions{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 24px rgba(37,99,235,.22);
+    }
+    .btn.secondary{
+      background:linear-gradient(135deg,#0f766e,#14b8a6);
+      box-shadow:0 10px 24px rgba(15,118,110,.22);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>Sections</h1>
+      <p>Manage class sections, assigned teachers, and student counts.</p>
+    </div>
+
+    <div class="panel">
+      <div class="cards">
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Section A</h3>
+          <p>32 students, active class section with weekly schedule.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Section B</h3>
+          <p>29 students, ongoing lessons and attendance tracking.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Section C</h3>
+          <p>27 students, reserved for special learning support.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Section</th>
+              <th>Class</th>
+              <th>Teacher</th>
+              <th>Students</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>A</td>
+              <td>Class 8</td>
+              <td>Mr. Khan</td>
+              <td>32</td>
+              <td><span class="status active"><i class="fa-solid fa-circle"></i> Active</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>B</td>
+              <td>Class 8</td>
+              <td>Mrs. Roy</td>
+              <td>29</td>
+              <td><span class="status pending"><i class="fa-solid fa-circle"></i> Pending</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>C</td>
+              <td>Class 9</td>
+              <td>Ms. Ali</td>
+              <td>27</td>
+              <td><span class="status closed"><i class="fa-solid fa-circle"></i> Closed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="teacher-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+        <a class="btn secondary" href="attendance.html"><i class="fa-solid fa-clipboard-check"></i> Go to Attendance</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
