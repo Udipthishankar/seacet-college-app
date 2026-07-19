@@ -7,72 +7,118 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      min-height:100vh;
+      background:linear-gradient(180deg,#fff7fb,#eef7ff);
+      color:#0b1020;
+    }
+    a{text-decoration:none}
+    .wrap{width:min(900px,92%);margin:auto}
+    .top{
+      padding:28px 0 10px;
+      text-align:center;
+    }
+    .top .mini{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(124,58,237,.08);
+      color:#5b3cc4;
+      font-size:.9rem;
+      font-weight:600;
+    }
+    .top h1{
+      margin:14px 0 8px;
+      font-size:clamp(2rem,4vw,3rem);
+    }
+    .top p{
+      margin:0 auto;
+      max-width:60ch;
+      color:#5d6a85;
+      line-height:1.7;
+    }
+    .back{
+      display:inline-block;
+      margin-top:16px;
+      color:#7c3aed;
+      font-weight:600;
+    }
+    .card{
+      margin:26px auto 60px;
+      max-width:620px;
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(124,58,237,.12);
+      border-radius:24px;
+      box-shadow:0 18px 50px rgba(0,0,0,.08);
+      padding:24px;
+    }
+    .field{
+      display:grid;
+      gap:8px;
+      margin-bottom:14px;
+    }
+    label{font-weight:600}
+    input,textarea{
+      width:100%;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,.08);
+      outline:none;
+      font-family:inherit;
+      background:#fff;
+    }
+    textarea{resize:vertical}
+    .btn{
+      display:inline-block;
+      width:100%;
+      padding:14px 18px;
+      border:none;
+      border-radius:999px;
+      background:linear-gradient(135deg,#7c3aed,#06b6d4);
+      color:#fff;
+      font-weight:700;
+      cursor:pointer;
+    }
+  </style>
 </head>
-<body class="query-page">
-  <header class="dash-topbar">
-    <div class="container dash-nav">
-      <div class="brand">
-        <div class="logo">SEA</div>
-        <div>
-          <h1>Teacher Query</h1>
-          <p>Parent Portal</p>
-        </div>
-      </div>
-      <a href="parent-dashboard.html" class="btn secondary">Back to Dashboard</a>
-    </div>
-  </header>
-
-  <main class="container query-main">
-    <section class="dash-hero">
-      <span class="pill">Send a message</span>
-      <h2>Ask a question to teachers</h2>
-      <p>
-        Use this form to send your query, concern, or request to the teacher.
-      </p>
+<body>
+  <div class="wrap">
+    <section class="top">
+      <span class="mini">Parent Query</span>
+      <h1>Send a query to the teacher</h1>
+      <p>Write your concern, question, or request here. We’ll keep it simple and easy to use for parents.</p>
+      <a class="back" href="parent-dashboard.html">← Back to Dashboard</a>
     </section>
 
-    <section class="query-card">
-      <form action="#" method="post" class="query-form">
+    <section class="card">
+      <form action="./query-sent.html" method="get">
         <div class="field">
           <label for="parentName">Parent Name</label>
-          <input type="text" id="parentName" placeholder="Enter your name" required>
+          <input type="text" id="parentName" name="parentName" required>
         </div>
-
         <div class="field">
           <label for="childName">Child Name</label>
-          <input type="text" id="childName" placeholder="Enter child name" required>
+          <input type="text" id="childName" name="childName" required>
         </div>
-
         <div class="field">
           <label for="teacherName">Teacher Name</label>
-          <input type="text" id="teacherName" placeholder="Enter teacher name" required>
+          <input type="text" id="teacherName" name="teacherName" required>
         </div>
-
         <div class="field">
           <label for="subject">Subject</label>
-          <input type="text" id="subject" placeholder="Message subject" required>
+          <input type="text" id="subject" name="subject" required>
         </div>
-
         <div class="field">
           <label for="message">Query</label>
-          <textarea id="message" rows="6" placeholder="Write your message here..." required></textarea>
+          <textarea id="message" name="message" rows="6" required></textarea>
         </div>
-
-        <a href="query-sent.html" class="btn primary">Send Query</a>
-    <header class="page-header">
-  <div class="brand">
-    <div class="logo">SEA</div>
-    <div>
-      <h1>Teacher Query</h1>
-      <p>Parent Portal</p>
-    </div>
-  </div>
-  <a href="parent-dashboard.html" class="back-btn">Back</a>
-  </header>
-        </form>
+        <button type="submit" class="btn">Send Query</button>
       </form>
     </section>
-  </main>
+  </div>
 </body>
 </html>
