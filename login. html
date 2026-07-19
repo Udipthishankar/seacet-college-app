@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEA Login Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+  <div class="login-shell">
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <div class="login-hero">
+      <span class="pill">SEA Group Login Portal</span>
+      <h1>Welcome back</h1>
+      <p>Select your role and sign in to continue to your dashboard.</p>
+    </div>
+
+    <div class="login-grid">
+      <section class="role-card">
+        <h2>Parent Login</h2>
+        <p>Check updates, attendance, and notices.</p>
+        <form>
+          <input type="text" placeholder="Parent name">
+          <input type="password" placeholder="Password">
+          <button type="submit" class="btn primary">Login as Parent</button>
+        </form>
+      </section>
+
+      <section class="role-card">
+        <h2>Student Login</h2>
+        <p>View classes, assignments, and results.</p>
+        <form>
+          <input type="text" placeholder="Student ID">
+          <input type="password" placeholder="Password">
+          <button type="submit" class="btn primary">Login as Student</button>
+        </form>
+      </section>
+
+      <section class="role-card">
+        <h2>Teacher Login</h2>
+        <p>Manage classes, attendance, and learning.</p>
+        <form>
+          <input type="text" placeholder="Staff ID">
+          <input type="password" placeholder="Password">
+          <button type="submit" class="btn primary">Login as Teacher</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
