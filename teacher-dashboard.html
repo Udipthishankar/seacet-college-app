@@ -18,7 +18,7 @@
       color:#111827;
     }
     .wrap{
-      width:min(1100px,92%);
+      width:min(1180px,92%);
       margin:auto;
       padding:28px 0 44px;
     }
@@ -30,54 +30,106 @@
       box-shadow:0 12px 34px rgba(0,0,0,.07);
       margin-bottom:18px;
     }
-    .topbar h1{margin:0;font-size:clamp(1.8rem,3vw,2.6rem)}
-    .topbar p{margin:8px 0 0;color:#6b7280;line-height:1.6}
-    .section{
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(0,0,0,.06);
-      border-radius:24px;
-      padding:22px;
-      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    .topbar h1{
+      margin:0;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+    }
+    .topbar p{
+      margin:8px 0 0;
+      color:#6b7280;
+      line-height:1.6;
+    }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+      gap:14px;
       margin-bottom:18px;
     }
-    .section h2{
-      margin:0 0 14px;
-      font-size:1.2rem;
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .stat{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.05);
     }
-    .section h2 i{color:#2563eb}
-    .btn-group{
+    .stat span{
+      display:block;
+      color:#6b7280;
+      font-size:.9rem;
+      margin-bottom:8px;
+    }
+    .stat strong{
+      font-size:1.6rem;
+      color:#111827;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:16px;
+    }
+    .card{
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:20px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+      text-decoration:none;
+      color:#111827;
+      transition:transform .2s ease, box-shadow .2s ease;
+      min-height:150px;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 16px 40px rgba(0,0,0,.1);
+    }
+    .icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      font-size:1.2rem;
+      color:#fff;
+      margin-bottom:14px;
+    }
+    .blue{background:linear-gradient(135deg,#2563eb,#7c3aed)}
+    .teal{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+    .orange{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+    .pink{background:linear-gradient(135deg,#ec4899,#8b5cf6)}
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+    }
+    .card p{
+      margin:0;
+      color:#6b7280;
+      line-height:1.5;
+      font-size:.95rem;
+    }
+    .footer-actions{
+      margin-top:18px;
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
+      gap:12px;
     }
-    .dash-btn{
+    .btn{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      min-width:200px;
-      padding:14px 22px;
+      padding:12px 18px;
       border-radius:999px;
       background:linear-gradient(135deg,#2563eb,#7c3aed);
       color:#fff;
       text-decoration:none;
       font-weight:700;
       box-shadow:0 10px 24px rgba(37,99,235,.22);
-      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
     }
-    .dash-btn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 16px 30px rgba(37,99,235,.28);
-      filter:saturate(1.05);
-    }
-    .dash-btn.secondary{
+    .btn.secondary{
       background:linear-gradient(135deg,#0f766e,#14b8a6);
       box-shadow:0 10px 24px rgba(15,118,110,.22);
     }
     @media (max-width:640px){
-      .dash-btn{width:100%; justify-content:center}
+      .btn{width:100%; justify-content:center}
     }
   </style>
 </head>
@@ -85,15 +137,69 @@
   <div class="wrap">
     <div class="topbar">
       <h1>Teacher Dashboard</h1>
-      <p>Manage classes and attendance from one clean place.</p>
+      <p>Manage timetable, classes, attendance, assignments, notices, messages, reports, and profile settings.</p>
     </div>
 
-    <div class="section">
-      <h2><i class="fa-solid fa-chalkboard"></i> Manage Classes</h2>
-      <div class="btn-group">
-        <a href="class-list.html" class="dash-btn"><i class="fa-solid fa-list"></i> View Class List</a>
-        <a href="attendance-student.html" class="dash-btn secondary"><i class="fa-solid fa-clipboard-check"></i> Attendance</a>
-      </div>
+    <div class="stats">
+      <div class="stat"><span>Today’s Classes</span><strong>6</strong></div>
+      <div class="stat"><span>Attendance</span><strong>92%</strong></div>
+      <div class="stat"><span>Pending Tasks</span><strong>4</strong></div>
+      <div class="stat"><span>Messages</span><strong>8</strong></div>
+    </div>
+
+    <div class="grid">
+      <a href="schedule.html" class="card">
+        <div class="icon blue"><i class="fa-solid fa-calendar-days"></i></div>
+        <h3>My Timetable</h3>
+        <p>View your period-wise schedule and class timings.</p>
+      </a>
+
+      <a href="class-list.html" class="card">
+        <div class="icon teal"><i class="fa-solid fa-list"></i></div>
+        <h3>Assigned Classes</h3>
+        <p>See the classes and sections linked to you.</p>
+      </a>
+
+      <a href="attendance-student.html" class="card">
+        <div class="icon orange"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h3>Attendance</h3>
+        <p>Mark and review student attendance quickly.</p>
+      </a>
+
+      <a href="#" class="card">
+        <div class="icon pink"><i class="fa-solid fa-file-pen"></i></div>
+        <h3>Assignments</h3>
+        <p>Create and manage class assignments.</p>
+      </a>
+
+      <a href="#" class="card">
+        <div class="icon blue"><i class="fa-solid fa-bullhorn"></i></div>
+        <h3>Notices</h3>
+        <p>Check school notices and announcements.</p>
+      </a>
+
+      <a href="#" class="card">
+        <div class="icon teal"><i class="fa-solid fa-comments"></i></div>
+        <h3>Messages</h3>
+        <p>Send and receive teacher communication.</p>
+      </a>
+
+      <a href="#" class="card">
+        <div class="icon orange"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Reports</h3>
+        <p>View attendance and class performance reports.</p>
+      </a>
+
+      <a href="#" class="card">
+        <div class="icon pink"><i class="fa-solid fa-user-gear"></i></div>
+        <h3>Profile</h3>
+        <p>Update your teacher details and settings.</p>
+      </a>
+    </div>
+
+    <div class="footer-actions">
+      <a class="btn" href="teacher-login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      <a class="btn secondary" href="attendance-student.html"><i class="fa-solid fa-clipboard-check"></i> Go to Attendance</a>
     </div>
   </div>
 </body>
