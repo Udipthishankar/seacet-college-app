@@ -18,7 +18,7 @@
       color:#111827;
     }
     .wrap{
-      width:min(1100px,92%);
+      width:min(1280px,94%);
       margin:auto;
       padding:28px 0 44px;
     }
@@ -46,20 +46,49 @@
       padding:22px;
       box-shadow:0 12px 34px rgba(0,0,0,.07);
     }
-    .info-row{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
+    .filters{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
       margin-bottom:18px;
     }
-    .chip{
-      padding:10px 14px;
-      border-radius:999px;
-      background:#eff6ff;
-      color:#1d4ed8;
-      font-weight:700;
-      font-size:.9rem;
+    .field label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+      color:#374151;
     }
+    .field select,.field input{
+      width:100%;
+      padding:13px 14px;
+      border-radius:14px;
+      border:1px solid #d1d5db;
+      background:#fff;
+      outline:none;
+      font-family:inherit;
+    }
+    .legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:18px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.9rem;
+      font-weight:700;
+      color:#fff;
+    }
+    .t1{background:#2563eb}
+    .t2{background:#0f766e}
+    .t3{background:#7c3aed}
+    .t4{background:#f59e0b}
+    .t5{background:#ef4444}
+    .break{background:#94a3b8}
     .table-wrap{
       overflow:auto;
       border-radius:18px;
@@ -68,36 +97,45 @@
     table{
       width:100%;
       border-collapse:collapse;
-      min-width:860px;
+      min-width:1100px;
       background:#fff;
     }
     th,td{
-      padding:14px 16px;
+      padding:14px 14px;
       text-align:center;
       border-bottom:1px solid #eef2f7;
       border-right:1px solid #eef2f7;
+      vertical-align:middle;
     }
-    th:last-child,td:last-child{border-right:none}
     th{
       background:#f8fafc;
       color:#374151;
+      white-space:nowrap;
+      font-weight:700;
     }
-    tbody tr:hover td{
+    td:first-child, th:first-child{
+      text-align:left;
+      font-weight:700;
+      background:#f8fafc;
+    }
+    tr:hover td{
       background:#fcfdff;
     }
-    .subject{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      font-weight:700;
+    .cell{
+      border-radius:14px;
+      padding:10px 12px;
       color:#fff;
-      font-size:.85rem;
+      font-weight:700;
+      line-height:1.3;
+      display:inline-block;
+      min-width:120px;
     }
-    .math{background:#2563eb}
-    .science{background:#0f766e}
-    .english{background:#7c3aed}
-    .history{background:#f59e0b}
-    .break{background:#ef4444}
+    .blue{background:linear-gradient(135deg,#2563eb,#60a5fa)}
+    .teal{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+    .purple{background:linear-gradient(135deg,#7c3aed,#a855f7)}
+    .orange{background:linear-gradient(135deg,#f59e0b,#fb7185)}
+    .red{background:linear-gradient(135deg,#ef4444,#f97316)}
+    .gray{background:linear-gradient(135deg,#64748b,#94a3b8)}
     .actions{
       margin-top:18px;
       display:flex;
@@ -120,70 +158,142 @@
       background:linear-gradient(135deg,#0f766e,#14b8a6);
       box-shadow:0 10px 24px rgba(15,118,110,.22);
     }
+    @media (max-width:640px){
+      .btn{width:100%; justify-content:center}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="topbar">
-      <h1>Class Schedule</h1>
-      <p>Weekly timetable for class management and lesson planning.</p>
+      <h1>Weekly Schedule</h1>
+      <p>Teacher-wise timetable from Monday to Friday with different classes and periods.</p>
     </div>
 
     <div class="panel">
-      <div class="info-row">
-        <div class="chip"><i class="fa-solid fa-calendar-week"></i> Weekly View</div>
-        <div class="chip"><i class="fa-solid fa-clock"></i> 8 Periods</div>
-        <div class="chip"><i class="fa-solid fa-bell"></i> 2 Breaks</div>
+      <div class="filters">
+        <div class="field">
+          <label>Teacher</label>
+          <select>
+            <option>Mr. Khan</option>
+            <option>Mrs. Roy</option>
+            <option>Ms. Ali</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Week</label>
+          <select>
+            <option>Current Week</option>
+            <option>Next Week</option>
+            <option>Last Week</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Search</label>
+          <input type="text" placeholder="Search class or subject">
+        </div>
+        <div class="field">
+          <label>View</label>
+          <select>
+            <option>Teacher Timetable</option>
+            <option>Class Timetable</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span class="tag t1">Mathematics</span>
+        <span class="tag t2">Science</span>
+        <span class="tag t3">English</span>
+        <span class="tag t4">Social Studies</span>
+        <span class="tag t5">Computer</span>
+        <span class="tag break">Break / Lunch</span>
       </div>
 
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Day</th>
-              <th>Period 1</th>
-              <th>Period 2</th>
-              <th>Period 3</th>
-              <th>Break</th>
-              <th>Period 4</th>
-              <th>Period 5</th>
-              <th>Lunch</th>
-              <th>Period 6</th>
+              <th>Period / Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Monday</td>
-              <td><span class="subject math">Math</span></td>
-              <td><span class="subject science">Science</span></td>
-              <td><span class="subject english">English</span></td>
-              <td><span class="subject break">Break</span></td>
-              <td><span class="subject math">Math</span></td>
-              <td><span class="subject history">History</span></td>
-              <td><span class="subject break">Lunch</span></td>
-              <td><span class="subject science">Lab</span></td>
+              <td>1<br>9:00 - 9:40</td>
+              <td><span class="cell blue">Class 8A<br>Math</span></td>
+              <td><span class="cell teal">Class 9A<br>Science</span></td>
+              <td><span class="cell purple">Class 8B<br>English</span></td>
+              <td><span class="cell orange">Class 7A<br>Social</span></td>
+              <td><span class="cell red">Class 10A<br>Computer</span></td>
             </tr>
             <tr>
-              <td>Tuesday</td>
-              <td><span class="subject science">Science</span></td>
-              <td><span class="subject math">Math</span></td>
-              <td><span class="subject english">English</span></td>
-              <td><span class="subject break">Break</span></td>
-              <td><span class="subject history">History</span></td>
-              <td><span class="subject science">Lab</span></td>
-              <td><span class="subject break">Lunch</span></td>
-              <td><span class="subject english">Reading</span></td>
+              <td>2<br>9:40 - 10:20</td>
+              <td><span class="cell teal">Class 9A<br>Science</span></td>
+              <td><span class="cell purple">Class 8B<br>English</span></td>
+              <td><span class="cell orange">Class 7A<br>Social</span></td>
+              <td><span class="cell red">Class 10A<br>Computer</span></td>
+              <td><span class="cell blue">Class 8A<br>Math</span></td>
             </tr>
             <tr>
-              <td>Wednesday</td>
-              <td><span class="subject english">English</span></td>
-              <td><span class="subject history">History</span></td>
-              <td><span class="subject math">Math</span></td>
-              <td><span class="subject break">Break</span></td>
-              <td><span class="subject science">Science</span></td>
-              <td><span class="subject math">Math</span></td>
-              <td><span class="subject break">Lunch</span></td>
-              <td><span class="subject history">Project</span></td>
+              <td>3<br>10:20 - 11:00</td>
+              <td><span class="cell purple">Class 8B<br>English</span></td>
+              <td><span class="cell orange">Class 7A<br>Social</span></td>
+              <td><span class="cell red">Class 10A<br>Computer</span></td>
+              <td><span class="cell blue">Class 8A<br>Math</span></td>
+              <td><span class="cell teal">Class 9A<br>Science</span></td>
+            </tr>
+            <tr>
+              <td>Break<br>11:00 - 11:20</td>
+              <td><span class="cell gray">Break</span></td>
+              <td><span class="cell gray">Break</span></td>
+              <td><span class="cell gray">Break</span></td>
+              <td><span class="cell gray">Break</span></td>
+              <td><span class="cell gray">Break</span></td>
+            </tr>
+            <tr>
+              <td>4<br>11:20 - 12:00</td>
+              <td><span class="cell orange">Class 7A<br>Social</span></td>
+              <td><span class="cell red">Class 10A<br>Computer</span></td>
+              <td><span class="cell blue">Class 8A<br>Math</span></td>
+              <td><span class="cell teal">Class 9A<br>Science</span></td>
+              <td><span class="cell purple">Class 8B<br>English</span></td>
+            </tr>
+            <tr>
+              <td>5<br>12:00 - 12:40</td>
+              <td><span class="cell red">Class 10A<br>Computer</span></td>
+              <td><span class="cell blue">Class 8A<br>Math</span></td>
+              <td><span class="cell teal">Class 9A<br>Science</span></td>
+              <td><span class="cell purple">Class 8B<br>English</span></td>
+              <td><span class="cell orange">Class 7A<br>Social</span></td>
+            </tr>
+            <tr>
+              <td>Lunch<br>12:40 - 1:20</td>
+              <td><span class="cell gray">Lunch</span></td>
+              <td><span class="cell gray">Lunch</span></td>
+              <td><span class="cell gray">Lunch</span></td>
+              <td><span class="cell gray">Lunch</span></td>
+              <td><span class="cell gray">Lunch</span></td>
+            </tr>
+            <tr>
+              <td>6<br>1:20 - 2:00</td>
+              <td><span class="cell blue">Class 8A<br>Math</span></td>
+              <td><span class="cell teal">Class 9A<br>Science</span></td>
+              <td><span class="cell purple">Class 8B<br>English</span></td>
+              <td><span class="cell orange">Class 7A<br>Social</span></td>
+              <td><span class="cell red">Class 10A<br>Computer</span></td>
+            </tr>
+            <tr>
+              <td>7<br>2:00 - 2:40</td>
+              <td><span class="cell teal">Class 9A<br>Science</span></td>
+              <td><span class="cell purple">Class 8B<br>English</span></td>
+              <td><span class="cell orange">Class 7A<br>Social</span></td>
+              <td><span class="cell red">Class 10A<br>Computer</span></td>
+              <td><span class="cell blue">Class 8A<br>Math</span></td>
             </tr>
           </tbody>
         </table>
@@ -191,7 +301,7 @@
 
       <div class="actions">
         <a class="btn" href="teacher-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
-        <a class="btn secondary" href="sections.html"><i class="fa-solid fa-layer-group"></i> Go to Sections</a>
+        <a class="btn secondary" href="attendance-student.html"><i class="fa-solid fa-clipboard-check"></i> Go to Attendance</a>
       </div>
     </div>
   </div>
