@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.E. CSE | SEA Group of Institutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      background:linear-gradient(135deg,#eef6ff,#fff7fb);
+      color:#111827;
+      line-height:1.6;
+    }
+    .wrap{
+      width:min(1100px,92%);
+      margin:auto;
+      padding:28px 0 44px;
+    }
+    .hero{
+      background:linear-gradient(135deg,#1d4ed8,#7c3aed);
+      color:#fff;
+      border-radius:28px;
+      padding:34px 26px;
+      box-shadow:0 18px 40px rgba(37,99,235,.18);
+      margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size:clamp(2rem,4vw,3rem);
+    }
+    .hero p{
+      margin:0;
+      max-width:850px;
+      opacity:.95;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .card{
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+    }
+    .card h2{
+      margin:0 0 12px;
+      font-size:1.15rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .card h2 i{color:#2563eb}
+    .list{
+      margin:0;
+      padding-left:18px;
+    }
+    .list li{margin-bottom:8px}
+    .highlight{
+      background:#eff6ff;
+      border-left:5px solid #2563eb;
+      padding:14px 16px;
+      border-radius:16px;
+      margin-top:12px;
+    }
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      color:#fff;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      box-shadow:0 10px 24px rgba(37,99,235,.22);
+      transition:transform .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.secondary{
+      background:linear-gradient(135deg,#0f766e,#14b8a6);
+    }
+    .btn.accent{
+      background:linear-gradient(135deg,#f59e0b,#ef4444);
+    }
+    .section{
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 12px 34px rgba(0,0,0,.07);
+      margin-bottom:18px;
+    }
+    .section h2{
+      margin:0 0 12px;
+      font-size:1.2rem;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .section h2 i{color:#2563eb}
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>B.E. Computer Science & Engineering</h1>
+      <p>
+        Explore the B.E. CSE program at SEA Group of Institutions — a strong foundation in programming,
+        software development, data science, AI, cybersecurity, and modern computing skills.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2><i class="fa-solid fa-bullseye"></i> Why Choose CSE</h2>
+        <ul class="list">
+          <li>Industry-focused curriculum.</li>
+          <li>Strong placement opportunities.</li>
+          <li>Programming, AI, and software skills.</li>
+          <li>Project-based learning.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><i class="fa-solid fa-book"></i> Core Topics</h2>
+        <ul class="list">
+          <li>Programming Fundamentals</li>
+          <li>Data Structures and Algorithms</li>
+          <li>Database Management</li>
+          <li>Web Development</li>
+          <li>Artificial Intelligence</li>
+          <li>Cyber Security</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><i class="fa-solid fa-circle-info"></i> Quick Details</h2>
+        <div class="highlight">
+          <strong>Duration:</strong> 4 Years<br>
+          <strong>Eligibility:</strong> 12th pass with PCM<br>
+          <strong>Level:</strong> Undergraduate Engineering
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-graduation-cap"></i> Admissions</h2>
+      <p>
+        Admissions for B.E. CSE are open for the new academic year. Students can view the admission details,
+        check eligibility, and apply online from this page.
+      </p>
+      <div class="btn-row">
+        <a href="be-cse-admission.html" class="btn"><i class="fa-solid fa-file-signature"></i> Admission</a>
+        <a href="be-cse-apply.html" class="btn secondary"><i class="fa-solid fa-laptop"></i> Apply Online</a>
+        <a href="be-cse-buy.html" class="btn accent"><i class="fa-solid fa-cart-shopping"></i> Online Purchase</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-users"></i> Career Scope</h2>
+      <p>
+        B.E. CSE opens paths to software engineering, full-stack development, data analysis,
+        cloud computing, cyber security, AI/ML, and higher studies.
+      </p>
+      <div class="footer-links">
+        <a href="teacher-dashboard.html" class="btn secondary"><i class="fa-solid fa-house"></i> Back to Home</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
